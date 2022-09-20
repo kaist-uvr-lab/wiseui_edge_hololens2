@@ -1,6 +1,24 @@
 # UNITY
-/Scenes
+/Assets/Scenes
+/Assets/XR
+/Assets/MRTK
+/Assets/OpenCVForUnity
+/Assets/TextMesh Pro
+/BuildARM
+/Library
+/Temp
+/ProjectSettings
+/Packages
+/obj
+/Logs
+/UserSettings
+*.pfx
+
+*.sln
+/Build
+/.vs
 *.meta
+MixedReality*.*
 
 # Prerequisites
 *.d
@@ -34,3 +52,6 @@
 *.exe
 *.out
 *.app
+
+*.vsconfig
+*.csproj
