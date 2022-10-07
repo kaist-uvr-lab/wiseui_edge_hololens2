@@ -138,6 +138,8 @@ public class SystemManager : MonoBehaviour
     public List<string> Trajectory;
 
     public TextMeshPro mText;
+    public string SendKeywords = "";
+    public string ReceiveKeywords="";
 
     void Awake()
     {
@@ -196,6 +198,11 @@ public class SystemManager : MonoBehaviour
             File.WriteAllText(dirPath + "/UserData.json", JsonUtility.ToJson(User));
             mText.text = e.ToString();
         }
+
+        if (SendKeywords.Length > 0)
+            User.SendKeywords += SendKeywords;
+        if(ReceiveKeywords.Length > 0)
+            User.ReceiveKeywords += ReceiveKeywords;
 
         try
         {

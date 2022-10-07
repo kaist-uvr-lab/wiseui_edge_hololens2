@@ -59,6 +59,21 @@ public class DataReceiver : MonoBehaviour
 
     IEnumerator MessageParsing(UdpData data)
     {
+        if (data.keyword == "HandEstimation") //나중에 키워드 변경
+        {
+
+            UnityWebRequest req1;
+            req1 = GetRequest(data.keyword, data.id);
+            yield return req1.SendWebRequest();
+            if (req1.result == UnityWebRequest.Result.Success)
+            {
+                float[] fdata = new float[req1.downloadHandler.data.Length / 4];
+                Buffer.BlockCopy(req1.downloadHandler.data, 0, fdata, 0, req1.downloadHandler.data.Length);
+                
+                
+
+            }
+        }
         yield break;
     }
 
